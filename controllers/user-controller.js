@@ -59,7 +59,7 @@ const userController = {
           return acc
         }, [])
 
-        const isFollowed = req.user.Followings.some(d => d.id === user.id)
+        const isFollowed = user.Followings?.some(d => d.id === user.id)
         res.render('users/profile', {
           user,
           isFollowed
