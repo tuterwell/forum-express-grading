@@ -17,7 +17,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 const app = express()
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 25060
 const SESSION_SECRET = 'secret'
 
 app.engine('hbs', handlebars({ extname: '.hbs', helpers: handlebarsHelpers }))

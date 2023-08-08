@@ -1,13 +1,13 @@
 {
   "development": {
-    "username": "root",
-    "password": "password",
-    "database": "forum",
+    "username": "well-2023C7",
+    "password": "AVNS_rPHi28drpt7tS7Rtb-E",
+    "database": "well-2023C7-db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
-    "use_env_variable": "CLEARDB_DATABASE_URL" 
+    "use_env_variable": "MYSQL_DATABASE_URL"
   },
   "travis": {
     "username": "travis",
