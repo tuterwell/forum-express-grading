@@ -15,6 +15,7 @@
   },
   "travis": {
     "username": "travis",
+    "password": "password",
     "database": "forum",
     "host": "127.0.0.1",
     "dialect": "mysql",
