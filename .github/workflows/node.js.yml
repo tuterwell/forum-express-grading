@@ -48,9 +48,6 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 14
-
-      - name : Start mysql
-        run : sudo service mysql start 
       - name: Set up MySQL database
         run: |
           docker exec -i $(docker ps -q --filter "name=mysql") mysql -uroot -proot -e "CREATE DATABASE IF NOT EXISTS forum default character set utf8mb4 collate utf8mb4_unicode_ci;"
