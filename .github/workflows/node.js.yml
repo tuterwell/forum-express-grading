@@ -43,8 +43,7 @@ jobs:
           node-version: 14
 
       - name: Set up MySQL database
-        run: docker exec -i $(docker ps -q --filter "name=mysql") mysql -uroot -proot -e "CREATE DATABASE IF NOT EXISTS forum default character set utf8mb4 collate utf8mb4_unicode_ci;"
-      - name: Install Sequelize CLI
+        run: mysql -e "CREATE DATABASE IF NOT EXISTS forum CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;"
         run: npm install sequelize-cli -g
       - name: Install dependencies
         run: npm install
