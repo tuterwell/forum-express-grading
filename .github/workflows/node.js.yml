@@ -1,0 +1,51 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Node.js CI
+
+on : 
+  pull_request:
+      branches:
+        - main
+        - R01
+        - R02
+        - R03
+        - R04
+        - R05
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:latest
+
+    env:
+      NODE_ENV: travis
+      JWT_SECRET: JWT_SECRET
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Set up MySQL database
+        run: mysql -e 'CREATE DATABASE IF NOT EXISTS forum default character set utf8mb4 collate utf8mb4_unicode_ci;
+      - name: Install Sequelize CLI
+        run: npm install sequelize-cli -g
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run database migrations
+        run: npx sequelize db:migrate
+
+      - name: Run database seeders
+        run: npx sequelize db:seed:all
+
+      - name : Run test
+        run: npm test
