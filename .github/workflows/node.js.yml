@@ -42,6 +42,8 @@ jobs:
         with:
           node-version: 14
 
+      - name : Start mysql
+        run : sudo service mysql start 
       - name: Set up MySQL database
         run: mysql -e "CREATE DATABASE IF NOT EXISTS forum CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;"
       - name : Install sequelize-cli
