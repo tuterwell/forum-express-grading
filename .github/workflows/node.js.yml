@@ -39,6 +39,8 @@ jobs:
     env:
       NODE_ENV: travis
       JWT_SECRET: JWT_SECRET
+      MYSQL_USER: travis
+      MYSQL_PASSWORD: password
 
     steps:
       - name: Checkout code
