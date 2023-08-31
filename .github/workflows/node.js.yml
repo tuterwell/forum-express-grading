@@ -4,6 +4,14 @@
 name: Node.js CI
 
 on : 
+  push:
+    branches:
+      - main
+      - R01
+      - R02
+      - R03
+      - R04
+      - R05
   pull_request:
       branches:
         - main
