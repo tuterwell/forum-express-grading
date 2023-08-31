@@ -43,7 +43,7 @@ jobs:
           node-version: 14
 
       - name: Set up MySQL database
-        run: mysql -e 'CREATE DATABASE IF NOT EXISTS forum default character set utf8mb4 collate utf8mb4_unicode_ci;
+        run: mysql -e 'CREATE DATABASE IF NOT EXISTS forum default character set utf8mb4 collate utf8mb4_unicode_ci;'
       - name: Install Sequelize CLI
         run: npm install sequelize-cli -g
       - name: Install dependencies
